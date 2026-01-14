@@ -80,8 +80,14 @@ const Navbar = () => {
                                 animate={{ x: 0 }}
                                 exit={{ x: '100%' }}
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                className="fixed right-0 top-0 h-full w-[80%] max-w-sm bg-aman-pearl shadow-2xl z-50 flex flex-col pt-24 px-8 space-y-8 md:hidden"
+                                className="fixed right-0 top-0 h-full w-[85%] max-w-sm bg-[#FDFCF8] shadow-2xl z-[60] flex flex-col pt-28 px-8 space-y-8 md:hidden border-l border-aman-stone/30"
                             >
+                                <div className="absolute top-6 right-6">
+                                    <button onClick={() => setIsMobileMenuOpen(false)}>
+                                        <X size={28} className="text-aman-charcoal" />
+                                    </button>
+                                </div>
+
                                 <div className="flex flex-col space-y-6 items-start">
                                     <Link to="/about" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
                                     <Link to="/destinations" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Venues</Link>
