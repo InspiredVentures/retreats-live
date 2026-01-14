@@ -82,7 +82,7 @@ const Navbar = () => {
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed right-0 top-0 h-full w-[85%] max-w-sm bg-[#FDFCF8] shadow-2xl z-[100] flex flex-col pt-28 px-8 space-y-8 md:hidden border-l border-aman-stone/30"
+                            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-[#FDFCF8] shadow-2xl z-[100] flex flex-col pt-28 px-8 space-y-8 md:hidden border-l border-aman-stone/30 overflow-y-auto"
                         >
                             <div className="absolute top-6 right-6">
                                 <button onClick={() => setIsMobileMenuOpen(false)}>
