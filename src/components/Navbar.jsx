@@ -54,37 +54,52 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <button className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                        <div className={textColorClass}>
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    <button className="md:hidden z-50 relative" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                        <div className={`${isMobileMenuOpen ? 'text-aman-charcoal' : textColorClass} transition-colors duration-300`}>
+                            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                         </div>
                     </button>
                 </div>
 
-                {/* Mobile Menu Overlay */}
+                {/* Mobile Side Menu (Drawer) */}
                 <AnimatePresence>
                     {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.3 }}
-                            className="fixed inset-0 bg-aman-pearl/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
-                        >
-                            <div className="flex flex-col items-center space-y-8 mt-24">
-                                <Link to="/about" className="text-2xl font-serif text-aman-charcoal" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-                                <Link to="/destinations" className="text-2xl font-serif text-aman-charcoal" onClick={() => setIsMobileMenuOpen(false)}>Venues</Link>
-                                <Link to="/retreats" className="text-2xl font-serif text-aman-charcoal" onClick={() => setIsMobileMenuOpen(false)}>Retreats</Link>
-                                <button onClick={() => { openModal({ venueName: 'General Inquiry' }); setIsMobileMenuOpen(false); }} className="text-2xl font-serif text-aman-charcoal">Start a Project</button>
-                                <Link to="/journal" className="text-2xl font-serif text-aman-charcoal" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
-                            </div>
-                            <button
-                                onClick={() => { setIsMobileMenuOpen(false); openModal({ venueName: 'General Inquiry' }); }}
-                                className="mt-8 border border-aman-charcoal px-8 py-3 text-xs uppercase tracking-widest hover:bg-aman-charcoal hover:text-white transition-all"
+                        <>
+                            {/* Backdrop */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+                            />
+
+                            {/* Drawer */}
+                            <motion.div
+                                initial={{ x: '100%' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '100%' }}
+                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                className="fixed right-0 top-0 h-full w-[80%] max-w-sm bg-aman-pearl shadow-2xl z-50 flex flex-col pt-24 px-8 space-y-8 md:hidden"
                             >
-                                Enquire Now
-                            </button>
-                        </motion.div>
+                                <div className="flex flex-col space-y-6 items-start">
+                                    <Link to="/about" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                                    <Link to="/destinations" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Venues</Link>
+                                    <Link to="/retreats" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Retreats</Link>
+                                    <Link to="/journal" className="text-xl font-serif text-aman-charcoal uppercase tracking-widest hover:text-aman-gold transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
+
+                                    <div className="w-full h-px bg-aman-charcoal/10 my-4"></div>
+
+                                    <button onClick={() => { openModal({ venueName: 'General Inquiry' }); setIsMobileMenuOpen(false); }} className="text-lg font-sans text-aman-charcoal hover:text-aman-gold text-left">Start a Project</button>
+                                    <button
+                                        onClick={() => { setIsMobileMenuOpen(false); openModal({ venueName: 'General Inquiry' }); }}
+                                        className="w-full mt-4 border border-aman-charcoal py-4 text-xs uppercase tracking-widest hover:bg-aman-charcoal hover:text-white transition-all text-center"
+                                    >
+                                        Enquire Now
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </>
                     )}
                 </AnimatePresence>
             </nav>
