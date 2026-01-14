@@ -26,7 +26,7 @@ const Navbar = () => {
 
     const isTransparent = isHome && !isScrolled;
 
-    const navClasses = `fixed w-full z-50 transition-all duration-500 ${!isTransparent ? 'bg-aman-pearl/95 backdrop-blur-sm py-4 shadow-sm' : 'bg-transparent py-8'}`;
+    const navClasses = `fixed w-full z-50 transition-all duration-500 ${!isTransparent ? `bg-aman-pearl/95 ${!isMobileMenuOpen ? 'backdrop-blur-sm' : ''} py-4 shadow-sm` : 'bg-transparent py-8'}`;
 
     // Text Color: White ONLY if Home AND Not Scrolled. Else Charcoal.
     const textColorClass = isTransparent ? 'text-white' : 'text-aman-charcoal';
