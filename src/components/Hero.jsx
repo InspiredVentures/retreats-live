@@ -22,7 +22,7 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.8 }}
                     className="text-4xl md:text-7xl lg:text-9xl font-serif font-medium tracking-tight mb-8"
                 >
-                    Design Your <br /> Legacy
+                    Design Your <br /> Perfect Retreat
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
