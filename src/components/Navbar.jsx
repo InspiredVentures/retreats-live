@@ -36,11 +36,11 @@ const Navbar = () => {
     return (
         <>
             <nav className={navClasses}>
-                <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+                <div className="container mx-auto px-4 md:px-12 flex justify-between items-center">
                     {/* Logo */}
-                    <Link to="/" className="group">
+                    <Link to="/" className="group flex-shrink-1 min-w-0">
                         <div className={`transition-colors duration-500 ${textColorClass}`}>
-                            <Logo isScrolled={!isTransparent} className="transform scale-75 md:scale-100" />
+                            <Logo isScrolled={!isTransparent} className="transform scale-75 md:scale-100 origin-left" />
                         </div>
                     </Link>
 
@@ -54,7 +54,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <button className="md:hidden z-50 relative" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                    <button className="md:hidden z-50 relative flex-shrink-0 p-1" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         <div className={`${isMobileMenuOpen ? 'text-aman-charcoal' : textColorClass} transition-colors duration-300`}>
                             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                         </div>
