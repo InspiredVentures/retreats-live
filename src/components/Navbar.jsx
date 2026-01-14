@@ -40,7 +40,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link to="/" className="group flex-shrink-1 min-w-0">
                         <div className={`transition-colors duration-500 ${textColorClass}`}>
-                            <Logo isScrolled={!isTransparent} className="transform scale-75 md:scale-100 origin-left" />
+                            <Logo isScrolled={!isTransparent} className="w-48 md:w-auto h-auto max-w-full" />
                         </div>
                     </Link>
 
