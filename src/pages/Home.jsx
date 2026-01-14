@@ -43,7 +43,10 @@ const Home = () => {
             <section className="px-6 md:px-12 pb-24 max-w-[1600px] mx-auto">
                 <div className="text-center mb-16">
                     <span className="text-aman-charcoal/60 text-xs uppercase tracking-[0.2em] block mb-4">Curated Experiences</span>
-                    <h3 className="text-2xl md:text-4xl font-serif text-aman-charcoal">Sample Itineraries</h3>
+                    <h3 className="text-2xl md:text-4xl font-serif text-aman-charcoal mb-6">Sample Itineraries</h3>
+                    <p className="font-sans text-aman-charcoal/70 max-w-2xl mx-auto leading-relaxed">
+                        These journeys serve as inspiration. Each experience is fully customizable, tailored to align perfectly with your community&apos;s vision.
+                    </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <Link to="/retreats/conservationists-asana">
